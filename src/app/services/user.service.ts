@@ -6,9 +6,7 @@ import { LoadingIndicatorService } from './loading-indicator.service';
 import { QueryService } from './query.service';
 import { User } from '../user';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class UserService {
 private _pageLimite = 100;
 private usersUrl = 'users';
