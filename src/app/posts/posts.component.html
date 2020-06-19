@@ -1,0 +1,37 @@
+<h2>My Posts</h2>
+<nav>
+  <a routerLink="/posts">posts</a>
+</nav>
+<nav>
+  <a routerLink="/users">users</a>
+</nav>
+<div class="post-list">
+      <div class="filter">
+        Search
+        <input
+            name='filter'
+            type="text"
+            [(ngModel)]="search"
+            (input)="onSearch($event.target.value)"
+        />
+        <button
+            class="btn btn-delete"
+            [disabled]="disableDelete"
+            (click)="deleteSelectedPosts()"
+        >
+          Delete
+      </button>
+      <button
+      [routerLink]="'add-post'"
+      class="btn btn-link btn-add"
+  >
+    Add Post
+  </button>
+    </div>
+
+<app-table
+    cssClass="posts"
+    [columnDefs]="columnDefs"
+    [data]="posts"
+></app-table>
+</div>

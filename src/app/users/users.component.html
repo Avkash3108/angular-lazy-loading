@@ -1,0 +1,37 @@
+<h2>My Users</h2>
+<nav>
+    <a routerLink="/posts">posts</a>
+  </nav>
+  <nav>
+    <a routerLink="/users">users</a>
+  </nav>
+<div class="user-list">
+      <div class="filter">
+        Search
+        <input
+            name='filter'
+            type="text"
+            [(ngModel)]="search"
+            (input)="onSearch($event.target.value)"
+        />
+        <button
+            class="btn btn-delete"
+            [disabled]="disableDelete"
+            (click)="deleteSelectedUsers()"
+        >
+          Delete
+      </button>
+        <button
+            [routerLink]="'add-user'"
+            class="btn btn-link btn-add"
+        >
+          Add User
+        </button>
+    </div>
+
+<app-table
+    [cssClass]="cssClass"
+    [columnDefs]="columnDefs"
+    [data]="users"
+></app-table>
+</div>
