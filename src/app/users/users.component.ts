@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, OnChanges, SimpleChanges } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { UserService } from '../services/user.service';
 import { LoadingIndicatorService } from '../services/loading-indicator.service';
@@ -56,7 +56,7 @@ export class UsersComponent implements OnInit, OnDestroy, OnChanges {
           sortable: false,
           headerTitle: 'Actions',
           cssClass: 'table-actions',
-          onEdit: (id: any) => {this.router.navigateByUrl(`users/${id}`); },
+          onEdit: (id: any) => {this.router.navigate([id],  { relativeTo: this.route }); },
           onDelete: (id: any) => {this.deleteUsers([id])}
       }
   ];
@@ -66,7 +66,8 @@ export class UsersComponent implements OnInit, OnDestroy, OnChanges {
       private userService: UserService,
       private loadingIndicatorService: LoadingIndicatorService,
       private alertService: AlertService,
-      private router: Router
+      private router: Router,
+      private route: ActivatedRoute
 
   ) { }
 

@@ -20,7 +20,9 @@ export class UserFormComponent implements OnInit {
     lastName: '',
     address: '',
     email: '',
-    contact: ''
+    contact: '',
+    type: '',
+    password: ''
  };
  isNew = true;
  userForm = this.userFormBuilder.group({
@@ -29,6 +31,8 @@ export class UserFormComponent implements OnInit {
     address: [this.user.address, Validators.required],
     email: [this.user.email, [Validators.required, Validators.email]],
     contact: [this.user.contact, Validators.required],
+    type: [this.user.type, Validators.required],
+    password: [this.user.password, Validators.required],
   });
   constructor(
     private alertService: AlertService,

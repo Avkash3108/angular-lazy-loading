@@ -6,7 +6,7 @@ import { AlertService } from '../services/alert.service';
 import { Post } from '../post';
 import { Sort } from '../sort';
 import { Alert } from '../alert';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-posts',
@@ -61,7 +61,7 @@ export class PostsComponent implements OnInit, OnDestroy {
           sortable: false,
           headerTitle: 'Actions',
           cssClass: 'table-actions',
-          onEdit: (id: any) => {this.router.navigateByUrl(`/posts/${id}`);},
+          onEdit: (id: any) => {this.router.navigate([id],  { relativeTo: this.route }); },
           onDelete: (id: any) => {this.deletePosts([id])}
       }
   ];
@@ -71,7 +71,8 @@ export class PostsComponent implements OnInit, OnDestroy {
       private postService: PostService,
       private loadingIndicatorService: LoadingIndicatorService,
       private alertService: AlertService,
-      private router: Router
+      private router: Router,
+      private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
