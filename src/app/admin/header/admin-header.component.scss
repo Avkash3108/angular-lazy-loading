@@ -1,0 +1,22 @@
+.admin-header {
+    background-color: black;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    font-size: 18px;
+    overflow: hidden;
+    z-index: 4;
+    
+    .log-out {
+        padding: 8px 16px;
+        float: right;
+        width: auto;
+        border: none;
+        display: block;
+        outline: 0;
+        background-color: inherit;
+        color: white;
+        font-size: 18px;
+    }
+}

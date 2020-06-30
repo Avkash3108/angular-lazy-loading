@@ -12,6 +12,7 @@ import { StickyHeaderDirective } from './directives/sticky-header.directive';
 import { CheckboxComponent } from './checkbox/checkbox.component';
 import { AlertComponent } from './alert/alert.component';
 import { AlertsComponent } from './alerts/alerts.component';
+import { AdminContentHeaderComponent } from './admin-content-header/admin-content-header.component';
 
 @NgModule({
   declarations: [
@@ -23,9 +24,11 @@ import { AlertsComponent } from './alerts/alerts.component';
     CheckboxComponent,
     HeaderComponent,
     AlertComponent,
-    AlertsComponent
+    AlertsComponent,
+    AdminContentHeaderComponent
   ],
   exports:[
+    AdminContentHeaderComponent,
     TableComponent,
     LoadingIndicatorComponent,
     AlertComponent,

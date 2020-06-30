@@ -1,65 +1,62 @@
-<nav>
-  <a routerLink="../">USERS</a>
-</nav>
-<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
-  <label class="form-label">
-    First Name:
-    <input type="text" formControlName="firstName" required>
-  </label>
-<div *ngIf="userForm.controls.firstName.invalid && (userForm.controls.firstName.dirty || userForm.controls.firstName.touched)"
-    class="error">
-
-  <div *ngIf="userForm.controls.firstName.errors.required">
-    First Name is required.
+<div class="container">
+  <div class="admin-form">
+    <div class="form-body">
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label class="form-label">First Name</label>
+          <input type="text" formControlName="firstName" required>
+          <div *ngIf="userForm.controls.firstName.invalid && (userForm.controls.firstName.dirty || userForm.controls.firstName.touched)" class="error">
+          <div *ngIf="userForm.controls.firstName.errors.required">First Name is required.</div>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label class="form-label">Last Name</label>
+        <input type="text" formControlName="lastName">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Address</label>
+        <input type="text" formControlName="address">
+        <div *ngIf="userForm.controls.address.invalid && (userForm.controls.address.dirty || userForm.controls.address.touched)"
+        class="error">
+        <div *ngIf="userForm.controls.address.errors.required">Address is required.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">E Mail</label>
+        <input type="text" formControlName="email">
+        <div *ngIf="userForm.controls.email.invalid && (userForm.controls.email.dirty || userForm.controls.email.touched)"
+        class="error">
+    
+      <div *ngIf="userForm.controls.email.errors.required">
+        Email is required.
+      </div>
+      <div *ngIf="userForm.controls.email.errors.email">
+        Please enter valid email id.
+      </div>
+    </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Password</label>
+        <input type="text" formControlName="password" required>
+        <div *ngIf="userForm.controls.password.invalid && (userForm.controls.password.dirty || userForm.controls.password.touched)"
+        class="error">
+      
+      <div *ngIf="userForm.controls.password.errors.required">
+        password is required.
+      </div>
+      </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Contact</label>
+        <input type="text" formControlName="contact">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Type</label>
+        <input type="text" formControlName="type" required>
+      </div>
+        <button type="submit" [disabled]="!userForm.valid">Submit</button>
+      </form>
+  </div>
   </div>
 </div>
-  <label class="form-label">
-    Last Name:     
-    <input type="text" formControlName="lastName">
-  </label>
-  <label class="form-label">
-      Address:
-      <input type="text" formControlName="address">
-  </label>
-<div *ngIf="userForm.controls.address.invalid && (userForm.controls.address.dirty || userForm.controls.address.touched)"
-    class="error">
-
-  <div *ngIf="userForm.controls.address.errors.required">
-    Address is required.
-  </div>
-</div>
-  <label class="form-label">
-      E-Mail:
-      <input type="text" formControlName="email">
-  </label>
-<div *ngIf="userForm.controls.email.invalid && (userForm.controls.email.dirty || userForm.controls.email.touched)"
-    class="error">
-
-  <div *ngIf="userForm.controls.email.errors.required">
-    Email is required.
-  </div>
-  <div *ngIf="userForm.controls.email.errors.email">
-    Please enter valid email id.
-  </div>
-</div>
-<label class="form-label">
-  Password:
-  <input type="text" formControlName="password" required>
-</label>
-<div *ngIf="userForm.controls.password.invalid && (userForm.controls.password.dirty || userForm.controls.password.touched)"
-  class="error">
-
-<div *ngIf="userForm.controls.password.errors.required">
-  password is required.
-</div>
-</div>
-  <label class="form-label">
-      Contact:
-      <input type="text" formControlName="contact">
-  </label>
-  <label class="form-label">
-    Type:
-    <input type="text" formControlName="type" required>
-  </label>
-  <button type="submit" [disabled]="!userForm.valid">Submit</button>
-</form>

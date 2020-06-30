@@ -1,0 +1,19 @@
+<nav class="admin-sidebar admin-sidebar-animate-left">
+<br>
+<div class="user-info">
+    <div class="user-avatar">
+        <img src="/assets/avatar2.png" class="user-avatar-img" style="width:46px">
+    </div>
+    <div class="user-greetings">
+        Welcome, <strong>{{username}}</strong>
+    </div>
+</div>
+<hr>
+  <div class="dashboard">
+      <a><h5>DashBoard</h5></a>
+  </div>
+  <div class="nav-items">
+      <a class="nav-item" routerLinkActive="active" [routerLink]="['users']">User</a>
+      <a class="nav-item" routerLinkActive="active" [routerLink]="['posts']">Post</a>
+  </div>
+</nav>
